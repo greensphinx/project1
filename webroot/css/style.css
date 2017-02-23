@@ -1,0 +1,91 @@
+body {
+    padding-top: 70px;
+}
+
+.starter_template {
+    padding: 40px 15px;
+}
+
+form {
+    width: 600px;
+    max-width: 600px;
+}
+
+.alert {
+    width: 600px;
+    max-width: 600px;
+}
+
+#body
+{
+
+    width: 1000px;
+    height: 1000px;
+    padding-left: 10px;
+}
+
+.contents
+{
+    padding-left: 20px;
+}
+
+.stock
+{
+    width: 400px;
+    height: 400px;
+    float: left;
+
+}
+
+.ahtung
+{
+    color: #D91915;
+}
+
+/*.stock p*/
+/*{*/
+    /*color: #D91915;*/
+/*}*/
+
+li
+{
+    list-style-type: none;
+}
+
+.three_product
+{
+    width: 400px;
+    height: 400px;
+    float: left;
+}
+
+.mob
+{
+    width: auto;
+    height: auto;
+    float: left;
+    clear: both;
+}
+
+#reg_auth
+{
+    width: auto;
+    height: 50px;
+    float: right;
+    clear: both;
+    text-align: center;
+}
+
+
+#reg, #auth
+{
+    background-color: #4EE60E;
+    border-radius: 5px;
+    height: 30px;
+    cursor: pointer;
+}
+
+#one_message
+{
+    border-top: 1px solid darkgrey;
+}

@@ -1,0 +1,31 @@
+<?php
+    $msg = '';
+    $form = new Registration($_POST);
+
+
+
+    if ($_POST) {
+        if ($form->validate()) {
+            $email = App::$db->escape($form->getEmail());
+            $username = App::$db->escape($form->getUsername());
+            $password = new Password( App::$db->escape($form->getPassword()) );
+
+            $res = App::$db->query("SELECT * FROM user WHERE user_name = '{$username}'");
+            if ($res) {
+                $msg = 'Пользователь с таким именем существует!';
+            } else {
+                App::$db->query("INSERT INTO user (user_email, user_name, user_password) VALUES ('{$email}','{$username}','{$password}')");
+
+                header("Location: /pages/index");
+            }
+        }
+    }
+?>
+<b><?=$msg; ?></b>
+<form method="post">
+    Email: <input type="email" name="email" value="<?=$form->getEmail(); ?>" /> <br/><br/>
+    Username: <input type="text" name="username" value="<?=$form->getUsername(); ?>" /> <br/><br/>
+    Password: <input type="password" name="password"/> <br/><br/>
+    Confirm password: <input type="password" name="passwordConfirm"/> <br/><br/>
+    <input type="submit"/>
+</form>

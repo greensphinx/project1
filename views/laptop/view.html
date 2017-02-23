@@ -1,0 +1,31 @@
+<img src="/uploads/<?=$data['one_product']['img']?>" height="400" width="400">
+<hr>
+<p>Планшет: <strong><?=$data['one_product']['title']?></strong></p>
+<p><strong>Описание:</strong></p>
+<p><?=$data['one_product']['features']?></p>
+<p><?=$data['one_product']['description']?></p>
+
+<h3><a>Добавить в корзину</a></h3>
+
+<?php if(isset($data['get_comments'])) { ?>
+<div id="users_messages">
+    <p><h3>Комментарии пользователей:</h3></p>
+    <div id="one_message">
+        <?php foreach($data['get_comments'] as $one) { ?>
+        <p>Пользователь <span><?= $one["name"]; ?></span> написал:</p>
+        <p><?= $one['message']; ?></p>
+        <p>Дата комментария: <?= $one["date_comment"]; ?></p>
+        <?php } ?>
+
+    </div>
+</div>
+<?php } ?> <!-- endif -->
+
+
+<p>Оставить отзыв:</p>
+<form action="" method="post">
+    <input type="text" class="form-control" name="name" placeholder="Ваше имя"><br>
+    <input type="text" class="form-control" name="email" placeholder="Ваш email"><br>
+    <textarea name="message" id="" rows="10" class="form-control" placeholder="Ваше сообщение"></textarea><br>
+    <button class="btn btn-primary btn-lg btn-block">Отправить</button>
+</form>

@@ -1,0 +1,8 @@
+<h3>Игровые консоли</h3>
+<?php foreach($data['category_kon'] as $row) { ?>
+<ul>
+    <li><img src="/uploads/<?=$row['img']?>" width="200" height="200"></li>
+    <li><a href="/konsole/view/<?=$row['id']?>"><?=$row['title']?></a></li>
+    <li>Price: <?=$row['price']?></li><hr>
+</ul>
+<?php } ?>

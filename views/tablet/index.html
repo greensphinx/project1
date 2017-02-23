@@ -1,0 +1,8 @@
+<h3>Планшеты</h3>
+<?php foreach($data['category_tab'] as $row) { ?>
+<ul>
+    <li><img src="/uploads/<?=$row['img']?>" width="100" height="100"></li>
+    <li><a href="/tablet/view/<?=$row['id']?>"><?=$row['title']?></a></li>
+    <li>Price: <?=$row['price']?></li><hr>
+</ul>
+<?php } ?>

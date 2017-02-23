@@ -1,0 +1,162 @@
+<!--=================================<br>-->
+    <!--это из файла pages/index.html<br>-->
+<div id="reg_auth">
+    <a href="/users/register">Регистрация</a>
+    <a href="/users/login">Войти</a><br>
+    <?=isset($_GET['msg']) ? $_GET['msg'] : '';?>
+</div>
+
+
+<div id="category">
+    <h3>Категории:</h3>
+    <ul>
+        <li><a href="/mobile/index">Мольные телефоны</a></li>
+        <li><a href="/tablet/index">Планшеты</a></li>
+        <li><a href="/laptop/index">Ноутбуки</a></li>
+        <li><a href="/konsole/index">Консоли</a></li>
+        <li><a href="/tv/index">Телевизоры</a></li>
+    </ul>
+</div>
+
+<!--2 акционных продукта категории + 3 обычных продукта этой же категории-->
+<div class="mob">
+    <h3>Мольные телефоны</h3>
+    <?php foreach( $data['product_mob'] as $row ) { ?>
+        <div class="stock" style="margin-top: 20px;">
+            <ul>
+                <li><p class="ahtung">АКЦИЯ!</p></li>
+            <li><a href="/mobile/view/<?=$row['id']?>"><img src="/uploads/<?=$row['img']?>" width="150" height="150"></a></li>
+            <li><p>Price: <?=$row['price']?></p></li>
+                <li><p>Old price: <?php $old = $row['price']; $old += 257; echo $old; ?></p></li>
+            <li><p>Features: <?=$row['features']?></p></li>
+            </ul>
+            <!--<a href="/pages/view/<?=$row['category']?>"><?=$row['title']?></a>-->
+        </div>
+    <?php } ?>
+
+    <?php foreach($data['mob'] as $prod) { ?>
+        <div class="three_product">
+
+            <ul>
+                <li><a href="/mobile/view/<?=$prod['id']?>"><img src="/uploads/<?=$prod['img']?>" width="150" height="150"></a></li>
+                <li><p>Price: <?=$prod['price']?></p></li>
+                <li><p>Features: <?=$prod['features']?></p></li>
+            </ul>
+
+        </div>
+    <?php } ?>
+</div>
+
+<div class="mob">
+    <h3>Планшеты</h3>
+    <?php foreach( $data['product_tab'] as $row ) { ?>
+    <div class="stock" style="margin-top: 20px;">
+        <ul>
+            <li><p class="ahtung">АКЦИЯ!</p></li>
+            <li><a href="/tablet/view/<?=$row['id']?>"><img src="/uploads/<?=$row['img']?>" width="150" height="150"></a></li>
+            <li><p>Price: <?=$row['price']?></p></li>
+            <li><p>Old price: <?php $old = $row['price']; $old += 257; echo $old; ?></p></li>
+            <li><p>Features: <?=$row['features']?></p></li>
+        </ul>
+        <!--<a href="/pages/view/<?=$row['category']?>"><?=$row['title']?></a>-->
+    </div>
+    <?php } ?>
+
+    <?php foreach($data['tab'] as $prod) { ?>
+    <div class="three_product">
+
+        <ul>
+            <li><a href="/tablet/view/<?=$prod['id']?>"><img src="/uploads/<?=$prod['img']?>" width="150" height="150"></a></li>
+            <li><p>Price: <?=$prod['price']?></p></li>
+            <li><p>Features: <?=$prod['features']?></p></li>
+        </ul>
+
+    </div>
+    <?php } ?>
+</div>
+
+<div class="mob">
+    <h3>Ноутбуки</h3>
+    <?php foreach( $data['product_lap'] as $row ) { ?>
+    <div class="stock" style="margin-top: 20px;">
+        <ul>
+            <li><p class="ahtung">АКЦИЯ!</p></li>
+            <li><a href="/laptop/view/<?=$row['id']?>"><img src="/uploads/<?=$row['img']?>" width="150" height="150"></a></li>
+            <li><p>Price: <?=$row['price']?></p></li>
+            <li><p>Old price: <?php $old = $row['price']; $old += 257; echo $old; ?></p></li>
+            <li><p>Features: <?=$row['features']?></p></li>
+        </ul>
+        <!--<a href="/pages/view/<?=$row['category']?>"><?=$row['title']?></a>-->
+    </div>
+    <?php } ?>
+
+    <?php foreach($data['lap'] as $prod) { ?>
+    <div class="three_product">
+
+        <ul>
+            <li><a href="/laptop/view/<?=$prod['id']?>"><img src="/uploads/<?=$prod['img']?>" width="150" height="150"></a></li>
+            <li><p>Price: <?=$prod['price']?></p></li>
+            <li><p>Features: <?=$prod['features']?></p></li>
+        </ul>
+
+    </div>
+    <?php } ?>
+</div>
+
+<div class="mob">
+    <h3>Консоли</h3>
+    <?php foreach( $data['product_kon'] as $row ) { ?>
+    <div class="stock" style="margin-top: 20px;">
+        <ul>
+            <li><p class="ahtung">АКЦИЯ!</p></li>
+            <li><a href="/konsole/view/<?=$row['id']?>"><img src="/uploads/<?=$row['img']?>" width="150" height="150"></a></li>
+            <li><p>Price: <?=$row['price']?></p></li>
+            <li><p>Old price: <?php $old = $row['price']; $old += 257; echo $old; ?></p></li>
+            <li><p>Features: <?=$row['features']?></p></li>
+        </ul>
+        <!--<a href="/pages/view/<?=$row['category']?>"><?=$row['title']?></a>-->
+    </div>
+    <?php } ?>
+
+    <?php foreach($data['kon'] as $prod) { ?>
+    <div class="three_product">
+
+        <ul>
+            <li><a href="/konsole/view/<?=$prod['id']?>"><img src="/uploads/<?=$prod['img']?>" width="150" height="150"></a></li>
+            <li><p>Price: <?=$prod['price']?></p></li>
+            <li><p>Features: <?=$prod['features']?></p></li>
+        </ul>
+
+    </div>
+    <?php } ?>
+</div>
+
+<div class="mob">
+    <h3>Телевизоры</h3>
+    <?php foreach( $data['product_tv'] as $row ) { ?>
+    <div class="stock" style="margin-top: 20px;">
+        <ul>
+            <li><p class="ahtung">АКЦИЯ!</p></li>
+            <li><a href="/tv/view/<?=$row['id']?>"><img src="/uploads/<?=$row['img']?>" width="150" height="150"></a></li>
+            <li><p>Price: <?=$row['price']?></p></li>
+            <li><p>Old price: <?php $old = $row['price']; $old += 257; echo $old; ?></p></li>
+            <li><p>Features: <?=$row['features']?></p></li>
+        </ul>
+        <!--<a href="/pages/view/<?=$row['category']?>"><?=$row['title']?></a>-->
+    </div>
+    <?php } ?>
+
+    <?php foreach($data['tv'] as $prod) { ?>
+    <div class="three_product">
+
+        <ul>
+            <li><a href="/tv/view/<?=$prod['id']?>"><img src="/uploads/<?=$prod['img']?>" width="150" height="150"></a></li>
+            <li><p>Price: <?=$prod['price']?></p></li>
+            <li><p>Features: <?=$prod['features']?></p></li>
+        </ul>
+
+    </div>
+    <?php } ?>
+</div>
+
+<!--<br>=================================<br>-->
